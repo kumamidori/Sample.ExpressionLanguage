@@ -1,0 +1,7 @@
+charge:
+  default:
+    span: (time >= 0101 and time < 0701) or time >= 0901
+    formula: base
+  summer:
+    span: time >= 0701 and time <= 0831
+    formula: base * 1.2 + 1000
