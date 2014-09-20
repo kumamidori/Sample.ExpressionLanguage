@@ -4,54 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "112ac39c52c8f749d6c3afdb5ca77c57",
+    "hash": "e6ed030cf4938ca96194af909596fca1",
     "packages": [
-        {
-            "name": "phpmentors/domain-kata",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpmentors-jp/domain-kata.git",
-                "reference": "912f863fda8608e5421ef7f6b8d8285dbc68727f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpmentors-jp/domain-kata/zipball/912f863fda8608e5421ef7f6b8d8285dbc68727f",
-                "reference": "912f863fda8608e5421ef7f6b8d8285dbc68727f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PHPMentors\\DomainKata\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "KUBO Atsuhiro",
-                    "email": "kubo@iteman.jp"
-                }
-            ],
-            "description": "Kata for domain models",
-            "keywords": [
-                "architecture",
-                "design",
-                "modeling"
-            ],
-            "time": "2014-09-12 06:32:15"
-        },
         {
             "name": "symfony/config",
             "version": "v2.5.4",
@@ -1365,9 +1319,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "phpmentors/domain-kata": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": [],
     "platform-dev": []

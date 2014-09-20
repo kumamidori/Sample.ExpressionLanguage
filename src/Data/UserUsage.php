@@ -1,14 +1,12 @@
 <?php
-namespace Sample\ExpressionLanguage\Entity;
-
-use PHPMentors\DomainKata\Entity\EntityInterface;
+namespace Sample\ExpressionLanguage\Data;
 
 /**
  * サービス使用量
  *
  * @package Sample\ExpressionLanguage\Entity
  */
-class UserUsage implements EntityInterface
+class UserUsage
 {
     private $usageDate;
     private $quantity;

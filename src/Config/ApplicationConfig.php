@@ -1,14 +1,12 @@
 <?php
-namespace Sample\ExpressionLanguage\Usecase;
+namespace Sample\ExpressionLanguage\Config;
 
-use PHPMentors\DomainKata\Usecase\UsecaseInterface;
-use Sample\ExpressionLanguage\Config\YamlFileLoader;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Loader\DelegatingLoader;
 use Symfony\Component\Config\Loader\LoaderResolver;
 
-abstract class AbstractUsecase implements UsecaseInterface
+class ApplicationConfig
 {
     protected $config;
     protected static $configDir;
@@ -26,7 +24,7 @@ abstract class AbstractUsecase implements UsecaseInterface
      * @throws \Exception
      * @throws \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
      */
-    protected function loadConfig()
+    private function loadConfig()
     {
         $configDir = new FileLocator(static::$configDir);
 
@@ -45,5 +43,13 @@ abstract class AbstractUsecase implements UsecaseInterface
         }
 
         return $config;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConfig()
+    {
+        return $this->config;
     }
 }

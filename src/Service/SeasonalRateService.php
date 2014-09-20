@@ -21,13 +21,13 @@ class SeasonalRateService
     }
 
     /**
-     * @param \DateTimeImmutable
+     * @param \DateTime
      * @return null|SeasonalRate
      */
-    public function currentSeason(\DateTimeImmutable $time)
+    public function currentSeason(\DateTime $date)
     {
         foreach ($this->seasons as $season) {
-            if ($season->contains($time)) {
+            if ($season->contains($date)) {
                 return $season;
             }
         }
@@ -35,9 +35,10 @@ class SeasonalRateService
         return null;
     }
 
-    public function currentChargeBy($base, \DateTimeImmutable $time)
+    public function currentChargeBy($base, \DateTime $date)
     {
-        $current = $this->currentSeason($time);
-        return $current->chargeBy($base);
+        $current = $this->currentSeason($date);
+
+        return $current->getChargeBy($base);
     }
 }

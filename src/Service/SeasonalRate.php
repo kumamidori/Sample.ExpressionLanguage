@@ -20,15 +20,21 @@ class SeasonalRate
         $this->expressionLanguage = new ExpressionLanguage();
     }
 
-    public function contains(\DateTimeInterface $time)
+    public function contains(\DateTimeInterface $date)
     {
         return $this->expressionLanguage->evaluate(
             $this->expressions['span'],
-            ['time' => $time->format('md')]
+            ['date' => $date->format('md')]
         );
     }
 
-    public function chargeBy($base)
+    /**
+     * 基本料金をもとに設定式により料金を得る
+     *
+     * @param $base
+     * @return string
+     */
+    public function getChargeBy($base)
     {
         return $this->expressionLanguage->evaluate(
             $this->expressions['formula'],
@@ -36,9 +42,6 @@ class SeasonalRate
         );
     }
 
-    /**
-     * @return mixed
-     */
     public function getSeasonName()
     {
         return $this->seasonName;

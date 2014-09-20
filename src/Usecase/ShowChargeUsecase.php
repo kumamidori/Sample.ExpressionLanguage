@@ -1,21 +1,34 @@
 <?php
 namespace Sample\ExpressionLanguage\Usecase;
 
-use PHPMentors\DomainKata\Entity\EntityInterface;
-use PHPMentors\DomainKata\Usecase\QueryUsecaseInterface;
 use Sample\ExpressionLanguage\Service\ChargeCalculator;
 
-class ShowChargeUsecase extends AbstractUsecase implements QueryUsecaseInterface
+/**
+ * 料金表示
+ *
+ * @package Sample\ExpressionLanguage\Usecase
+ */
+class ShowChargeUsecase
 {
     /**
-     * @param  \PHPMentors\DomainKata\Entity\EntityInterface $entity
+     * @var array
+     */
+    private $config;
+
+    public function __construct(array $config)
+    {
+        $this->config = $config;
+    }
+
+    /**
+     * @param $data
      * @return mixed
      */
-    public function run(EntityInterface $entity)
+    public function run($data)
     {
         $calc = new ChargeCalculator($this->config);
-        $userDate = new \DateTimeImmutable($entity->getUsageDate());
-        $result = $calc->calculateBy($entity->getQuantity(), $userDate);
+        $userDate = new \DateTime($data->getUsageDate());
+        $result = $calc->calculateBy($data->getQuantity(), $userDate);
 
         return $result;
     }

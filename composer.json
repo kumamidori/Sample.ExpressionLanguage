@@ -6,7 +6,6 @@
         }
     },
     "require": {
-        "phpmentors/domain-kata": "*@dev",
         "symfony/config": "2.5.*",
         "symfony/yaml": "2.5.*",
         "symfony/expression-language": "2.5.*"

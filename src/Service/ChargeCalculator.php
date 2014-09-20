@@ -27,13 +27,14 @@ class ChargeCalculator
                 new SeasonalRate(
                     $season,
                     [
-                        'span' => new Expression($current['span']),
+                        'span'    => new Expression($current['span']),
                         'formula' => new Expression($current['formula'])
                     ]
                 )
             );
         }
         $this->rateService = $rateService;
+
         $app = require __DIR__ . '/../../app/config/app.php';
         static::$ratePerUnit = $app['charge_rate_per_unit'];
     }
@@ -42,11 +43,11 @@ class ChargeCalculator
      * 料金を量と日付から計算して取得する
      *
      * @param int $quantity
-     * @param \DateTimeImmutable $time
+     * @param \DateTime $date
      * @return int
      */
-    public function calculateBy($quantity, \DateTimeImmutable $time)
+    public function calculateBy($quantity, \DateTime $date)
     {
-        return $this->rateService->currentChargeBy($quantity * static::$ratePerUnit, $time);
+        return $this->rateService->currentChargeBy($quantity * static::$ratePerUnit, $date);
     }
 }
