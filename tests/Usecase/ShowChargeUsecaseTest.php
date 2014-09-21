@@ -17,7 +17,7 @@ class ShowChargeUsecaseTest extends \PHPUnit_Framework_TestCase
         $usecase = new ShowChargeUsecase($app->getConfig());
 
         $expected = 8000 * 2 * 1.2  + 1000;
-        $this->assertSame($expected, $usecase->run($fixture));
+        $this->assertSame((int)$expected, $usecase->run($fixture));
     }
 
     public function testShowChargeUsecaseReturnsExtraChargeCaseSummer()
@@ -30,6 +30,6 @@ class ShowChargeUsecaseTest extends \PHPUnit_Framework_TestCase
         $usecase = new ShowChargeUsecase($app->getConfig());
 
         $expected = 8000 * 4 * 0.9;
-        $this->assertSame($expected, $usecase->run($fixture));
+        $this->assertSame((int)$expected, $usecase->run($fixture));
     }
 }

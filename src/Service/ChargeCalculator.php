@@ -48,6 +48,6 @@ class ChargeCalculator
      */
     public function calculateBy($quantity, \DateTime $date)
     {
-        return $this->rateService->currentChargeBy($quantity * static::$ratePerUnit, $date);
+        return (int)$this->rateService->currentChargeBy($quantity * static::$ratePerUnit, $date);
     }
 }
