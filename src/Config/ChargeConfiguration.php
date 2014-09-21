@@ -25,7 +25,7 @@ class ChargeConfiguration implements ConfigurationInterface
                         foreach ($keys as $season) {
                             // memo: 連想配列キーの妥当性チェックはsymfony/config組み込みのメソッドではできないのかな？
                             // memo: nodeArray cf. prototype array。
-                            if(in_array($season, ['default', 'summer']) === false) {
+                            if(in_array($season, ['normal', 'summer']) === false) {
                                 return true;
                             };
                         }

@@ -1,5 +1,5 @@
 seasons:
-  default:
+  normal:
     span: (date >= 0101 and date < 0701) or date >= 0901
     formula: base * 1.2 + 1000
   summer:

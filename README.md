@@ -47,7 +47,7 @@ Symfony/Expression Language コンポーネントを使った設定式のサン�
 [季節別設定式](https://github.com/kumamidori/Sample.ExpressionLanguage/blob/master/app/config/charge.yml)
 
 ```
-  default:
+  normal:
     span: (date >= 0101 and date < 0701) or date >= 0901
     formula: base * 1.2 + 1000
   summer:
@@ -58,3 +58,26 @@ Symfony/Expression Language コンポーネントを使った設定式のサン�
 ## モデル
 
 ![式言語サンプルのモデル](./images/expression_lang_class_diagram.jpg)
+
+
+## 実行方法
+
+
+- セットアップ
+
+
+```
+$ composer install
+```
+
+- 実行
+
+```
+$ php scripts/main.php
+```
+
+- Test
+
+```
+$ phpunit
+```
